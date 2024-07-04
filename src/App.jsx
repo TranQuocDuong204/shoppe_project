@@ -5,9 +5,11 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HeaderCart from "./components/headerCart/HeaderCart";
 import toast, { Toaster } from "react-hot-toast";
+import NoticationBox from "./components/notication/NoticationBox";
 function App() {
   return (
     <>
+      <NoticationBox />
       <Toaster />
       <Router>
         {/* <Header /> */}
