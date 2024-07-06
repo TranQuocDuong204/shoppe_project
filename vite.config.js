@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   base: "/shoppe_project/",
   build: {
-    chunkSizeWarningLimit: 600,
+    chunkSizeWarningLimit: 1000,
   },
 })

@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-
-import LoadingProduct from "../loading/LoadingProduct";
 import Rating from "@mui/material/Rating";
-import SearchPageNotFound from "./SearchPageNotFound";
 import { Link } from "react-router-dom";
 import LoadingBackdrop from "../loading/LoadingBackdrop";
 const ListSearch = ({ isLoading, setLoading }) => {
@@ -23,9 +20,9 @@ const ListSearch = ({ isLoading, setLoading }) => {
         </div>
       ) : (
         <ul className="flex flex-rown flex-wrap gap-3 justify-around mt-3">
-          {listSearch && listSearch.length ? (
+          {listSearch && listSearch.length && (
             listSearch.map((item) => (
-              <Link to={`/product/${item.id}`}>
+              <Link to={`/product/${item.id}`} key={item.id}>
                 <li className=" bg-white w-[220px] cursor-pointer border relative  hover:scale-[1.02] ease-in duration-200 hover:border-red-600 rounded-2xl py-3">
                   <img
                     src={item.thumbnail}
@@ -66,9 +63,7 @@ const ListSearch = ({ isLoading, setLoading }) => {
                 </li>
               </Link>
             ))
-          ) : (
-            <SearchPageNotFound />
-          )}
+          ) }
         </ul>
       )}
     </div>

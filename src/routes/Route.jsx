@@ -9,7 +9,6 @@ import CheckOutPage from "../pages/CheckOutPage/CheckOutPage";
 
 import ProductSinglePage from "../pages/ProductSinglePage/ProductSinglePage";
 import SearchPage from "../pages/SearchPage/SearchPage";
-import SearchPageNotFound from "../components/searchComponent/SearchPageNotFound";
 import ProFilePage from "../pages/ProfilePage/ProFilePage";
 const AppRoutes = () => {
   return (
@@ -20,7 +19,6 @@ const AppRoutes = () => {
       <Route path="/category/:id" element={<CategoriProductPage />} />
       <Route path="/checkout" element={<CheckOutPage />} />
       <Route path="/product/:id" element={<ProductSinglePage />} />
-      <Route path="/search" element={<SearchPageNotFound />} />
       <Route path="/search/:searchTerm" element={<SearchPage />} />
     </Routes>
   );

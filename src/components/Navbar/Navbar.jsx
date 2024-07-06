@@ -30,8 +30,19 @@ const Navbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`search/${search}`);
-    setSearch("");
+    if(search) {
+      navigate(`search/${search}`);
+      setSearch("");
+    }else {
+      toast.error("Vui lòng nhập từ khóa để tìm kiểm nha...!!", {
+        duration: 2000,
+        position: "top-center",
+        style: {
+          fontSize: "14px",
+        },
+      });
+    }
+   
   };
 
   const handleCartClick = (e) => {
