@@ -1,18 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, useLocation } from "react-router-dom";
+import { HashRouter as Router, useLocation } from "react-router-dom";
 import AppRoutes from "./routes/Route";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HeaderCart from "./components/headerCart/HeaderCart";
 import toast, { Toaster } from "react-hot-toast";
 import NoticationBox from "./components/notication/NoticationBox";
+
 function App() {
   return (
     <>
       <NoticationBox />
       <Toaster />
       <Router>
-        {/* <Header /> */}
         <ConditionalHeader />
         <AppRoutes />
         <Footer />
@@ -20,6 +20,7 @@ function App() {
     </>
   );
 }
+
 const ConditionalHeader = () => {
   const location = useLocation();
   const noHeaderRoutes = ["/cart", "/checkout", "/profile"];

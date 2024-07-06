@@ -47,7 +47,7 @@ const ListSearch = ({ isLoading, setLoading }) => {
                       </span>
                     </h2>
 
-                    <h3 className="text-red-500">{item.price}$</h3>
+                    <h3 className="text-red-500">{Math.ceil(item.price)}$</h3>
                     <div className="flex flex-row items-center gap-2 flex-wrap">
                       {" "}
                       <p>Đã bán: {item.stock}k</p>

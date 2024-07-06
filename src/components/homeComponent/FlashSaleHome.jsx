@@ -55,7 +55,7 @@ const FlashSaleHome = ({ isLoading }) => {
                     {item.minimumOrderQuantity}%
                   </span>
                   <h1 className="text-center text-2xl text-red-600">
-                    {item.price}$
+                    {Math.ceil(item.price)}$
                   </h1>
                   <p className="h-[16px] bg-orange-400 flex justify-center items-center text-xs rounded-xl mx-3 uppercase text-white">
                     Đang bán chạy

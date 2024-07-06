@@ -40,7 +40,7 @@ const ListProByCate = ({ listCategories, isLoading }) => {
                       </span>
                     </h2>
 
-                    <h3 className="text-red-500">{pro.price}$</h3>
+                    <h3 className="text-red-500">{Math.ceil(pro.price)}$</h3>
                     <div className="flex flex-row items-center">
                       <p className=" text-base">
                         <Rating

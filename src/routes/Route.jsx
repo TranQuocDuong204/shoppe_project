@@ -25,54 +25,5 @@ const AppRoutes = () => {
     </Routes>
   );
 };
-// const AppRoutes = [
-//   {
-//     path: "/",
-//     component: HomePage,
-//     layout: "DefaultLayout",
-//     headerProps: { showHeader: true },
-//   },
-//   {
-//     path: "/cart",
-//     component: CartPage,
-//     layout: "DefaultLayout",
-//     headerProps: { showHeader: false },
-//   },
-//   {
-//     path: "/profile",
-//     component: ProFilePage,
-//     layout: "DefaultLayout",
-//     headerProps: { showHeader: true },
-//   },
-//   {
-//     path: "/category/:id",
-//     component: CategoriProductPage,
-//     layout: "DefaultLayout",
-//     headerProps: { showHeader: true },
-//   },
-//   {
-//     path: "/checkout",
-//     component: CheckOutPage,
-//     layout: "DefaultLayout",
-//     headerProps: { showHeader: true },
-//   },
-//   {
-//     path: "/product/:id",
-//     component: ProductSinglePage,
-//     layout: "DefaultLayout",
-//     headerProps: { showHeader: true },
-//   },
-//   {
-//     path: "/search",
-//     component: SearchPageNotFound,
-//     layout: "DefaultLayout",
-//     headerProps: { showHeader: true },
-//   },
-//   {
-//     path: "/search/:searchTerm",
-//     component: SearchPage,
-//     layout: "DefaultLayout",
-//     headerProps: { showHeader: true },
-//   },
-// ];
+
 export default AppRoutes;

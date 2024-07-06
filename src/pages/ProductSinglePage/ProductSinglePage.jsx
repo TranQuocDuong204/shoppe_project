@@ -7,41 +7,41 @@ import BoxDesDetail from "../../components/singlePageProComponent/BoxDesDetail";
 import BoxCommnet from "../../components/singlePageProComponent/BoxCommnet";
 import LoadingProduct from "../../components/loading/LoadingProduct";
 import BoxProductCategory from "../../components/singlePageProComponent/BoxProductCategory";
+
 const ProductSinglePage = () => {
   const [proDetail, setProDetail] = useState({});
   const [imgMain, setImgMain] = useState("");
-  const [initialImg, setInitialImg] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [paramsCate, setParamsCate] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const [productCate, setProductCate] = useState([]);
   const { id } = useParams();
-  const getApiDetailPro = async () => {
-    setIsLoading(true);
-    const res = await getApiAll.getApiProductDetail(id);
-    setInitialImg(res.thumbnail);
-    setImgMain(res.thumbnail);
-    setParamsCate(res.category);
-    setProDetail(res);
-    setIsLoading(false);
+
+  const fetchData = async () => {
+    try {
+      setIsLoading(true);
+      const res = await getApiAll.getApiProductDetail(id);
+      setProDetail(res);
+      setImgMain(res.thumbnail);
+
+      const { products } = await getApiAll.getApiProductByCategory(
+        res.category
+      );
+      setProductCate(products);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
+
   const handleCLick = (data) => {
-    setImgMain((prevImgMain) => (prevImgMain === data ? initialImg : data));
-  };
-
-  const getProductBycate = async () => {
-    const res = await getApiAll.getApiProductByCategory(paramsCate);
-    const { products } = res;
-    setProductCate(products);
+    setImgMain((prevImgMain) =>
+      prevImgMain === data ? proDetail.thumbnail : data
+    );
   };
 
   useEffect(() => {
-    getApiDetailPro();
+    fetchData();
   }, [id]);
-
-  useEffect(() => {
-    getProductBycate();
-  }, [paramsCate]);
-
 
   return (
     <div className="max-w-[1200px] mx-auto my-7">
@@ -54,18 +54,12 @@ const ProductSinglePage = () => {
           <BoxProDetail
             imgMain={imgMain}
             proDetail={proDetail}
-            getImg={(item) => {
-              handleCLick(item);
-            }}
+            getImg={handleCLick}
           />
 
-          {/* des */}
           <BoxDesDetail proDetail={proDetail} />
-
-          {/* danh gia */}
           <BoxCommnet proDetail={proDetail} />
-          <BoxProductCategory productCate={productCate}/>
-         
+          <BoxProductCategory productCate={productCate} />
         </>
       )}
     </div>

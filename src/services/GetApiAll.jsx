@@ -18,29 +18,45 @@ const getApiAll = {
   },
 
   getApiProduct: async (params) => {
-    const products = await axios.get(URL_API_PRODUCTS, {
-      params,
-    });
-    return products.data;
+    try {
+      const products = await axios.get(URL_API_PRODUCTS, {
+        params,
+      });
+      return products.data;
+    } catch (e) {
+      console.log(e);
+    }
   },
 
   getApiProductSearchSort: async (params) => {
-    const products = await axios.get(URL_API_PRODUCT_SEARCH_SORT, {
-      params,
-    });
-    return products.data;
+    try {
+      const products = await axios.get(URL_API_PRODUCT_SEARCH_SORT, {
+        params,
+      });
+      return products.data;
+    } catch (e) {
+      console.log(e);
+    }
   },
 
   getApiProductByCategory: async (params) => {
-    const categotyByProduct = await axios.get(
-      `${URL_API_CATEGORY_BY_PRODUCT}${params}`
-    );
-    return categotyByProduct.data;
+    try {
+      const categotyByProduct = await axios.get(
+        `${URL_API_CATEGORY_BY_PRODUCT}${params}`
+      );
+      return categotyByProduct.data;
+    } catch (e) {
+      console.log(e);
+    }
   },
 
   getApiProductDetail: async (id) => {
-    const productDetail = await axios.get(`${URL_API_PRODUCTS}${id}`);
-    return productDetail.data;
+    try {
+      const productDetail = await axios.get(`${URL_API_PRODUCTS}${id}`);
+      return productDetail.data;
+    } catch (e) {
+      console.log(e);
+    }
   },
 };
 

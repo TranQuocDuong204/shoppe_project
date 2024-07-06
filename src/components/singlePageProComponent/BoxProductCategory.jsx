@@ -9,7 +9,7 @@ const BoxProductCategory = ({ productCate }) => {
         <h1 className=" font-semibold py-3">CÓ THỂ BẠN CŨNG THÍCH</h1>
         <ul className="flex flex-rown flex-wrap gap-3 justify-around ">
           {productCate.slice(0, 10).map((item) => (
-            <Link to={`/product/${item.id}`}>
+            <Link to={`/product/${item.id}`} key={item.id}>
               <li className=" bg-white w-[225px] cursor-pointer border relative  hover:scale-[1.02] ease-in duration-200 hover:border-red-600 rounded-2xl py-3">
                 <img
                   src={item.thumbnail}
@@ -34,7 +34,7 @@ const BoxProductCategory = ({ productCate }) => {
                     </span>
                   </h2>
 
-                  <h3 className="text-red-500">{item.price}$</h3>
+                  <h3 className="text-red-500">{Math.ceil(item.price)}$</h3>
                   <div className="flex flex-row items-center gap-2 flex-wrap">
                     {" "}
                     <p className=" text-base">
