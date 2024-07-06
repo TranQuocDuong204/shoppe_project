@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import LoadingProduct from "../loading/LoadingProduct";
+import LoadingBackdrop from "../loading/LoadingBackdrop";
 import Rating from "@mui/material/Rating";
 const DisplayBrand = ({ isLoading, setLoading }) => {
   const productBrand = useSelector(
@@ -15,7 +15,7 @@ const DisplayBrand = ({ isLoading, setLoading }) => {
     <div>
       {isLoading ? (
         <div className="max-w-[1200px] flex justify-center items-center">
-          <LoadingProduct/>
+          <LoadingBackdrop isLoading={isLoading} />
         </div>
       ) : (
         <ul className="flex flex-rown flex-wrap gap-3 justify-around mt-3">

@@ -87,7 +87,6 @@ const cartSlice = createSlice({
           isCartMessageOn: true,
         };
       } else {
-        
         const cartDel = carts.filter((item) => item.id !== id);
         toast.success("Xóa thành công!!", {
           duration: 2000,

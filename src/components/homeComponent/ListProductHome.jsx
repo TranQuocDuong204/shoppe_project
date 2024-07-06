@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import BoxProductHome from "./BoxProductHome";
 import { useEffect } from "react";
 import LoadingProduct from "../loading/LoadingProduct";
+import LoadingSkeleton from "../loading/LoadingSkeleton";
 const ListProductHome = ({ isLoading }) => {
   const products = useSelector((state) => state.ProductSlice.products);
 
@@ -23,7 +24,7 @@ const ListProductHome = ({ isLoading }) => {
           {isLoading ? (
             <div className="max-w-[1200px] m-auto">
               {" "}
-              <LoadingProduct />
+              <LoadingSkeleton />
             </div>
           ) : (
             <ul className="flex flex-rown flex-wrap gap-3 justify-around ">

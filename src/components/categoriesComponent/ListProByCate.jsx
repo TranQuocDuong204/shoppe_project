@@ -2,13 +2,14 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Rating from "@mui/material/Rating";
 import LoadingProduct from "../loading/LoadingProduct";
+import LoadingBackdrop from "../loading/LoadingBackdrop";
 const ListProByCate = ({ listCategories, isLoading }) => {
   const { id } = useParams();
   return (
     <div>
       {isLoading ? (
         <div className="max-w-[1200px] flex justify-center items-center">
-          <LoadingProduct />
+          <LoadingBackdrop isLoading={isLoading} />
         </div>
       ) : (
         <div>

@@ -5,9 +5,8 @@ import BoxProDetail from "../../components/singlePageProComponent/BoxProDetail";
 import NavigaSiglePro from "../../components/singlePageProComponent/NavigaSiglePro";
 import BoxDesDetail from "../../components/singlePageProComponent/BoxDesDetail";
 import BoxCommnet from "../../components/singlePageProComponent/BoxCommnet";
-import LoadingProduct from "../../components/loading/LoadingProduct";
 import BoxProductCategory from "../../components/singlePageProComponent/BoxProductCategory";
-
+import LoadingBackdrop from "../../components/loading/LoadingBackdrop";
 const ProductSinglePage = () => {
   const [proDetail, setProDetail] = useState({});
   const [imgMain, setImgMain] = useState("");
@@ -48,7 +47,7 @@ const ProductSinglePage = () => {
       <NavigaSiglePro title={proDetail.title} />
 
       {isLoading ? (
-        <LoadingProduct />
+        <LoadingBackdrop isLoading={isLoading}/>
       ) : (
         <>
           <BoxProDetail

@@ -5,6 +5,7 @@ import LoadingProduct from "../loading/LoadingProduct";
 import Rating from "@mui/material/Rating";
 import SearchPageNotFound from "./SearchPageNotFound";
 import { Link } from "react-router-dom";
+import LoadingBackdrop from "../loading/LoadingBackdrop";
 const ListSearch = ({ isLoading, setLoading }) => {
   const listSearch = useSelector(
     (state) => state.SearchProductSlice.searchProduct
@@ -18,7 +19,7 @@ const ListSearch = ({ isLoading, setLoading }) => {
       {" "}
       {isLoading ? (
         <div className="max-w-[1200px] flex justify-center items-center">
-          <LoadingProduct />
+          <LoadingBackdrop isLoading={isLoading} />
         </div>
       ) : (
         <ul className="flex flex-rown flex-wrap gap-3 justify-around mt-3">
