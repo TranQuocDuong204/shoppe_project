@@ -3,7 +3,7 @@ import Rating from "@mui/material/Rating";
 const BoxCommnet = ({ proDetail }) => {
   return (
     <div>
-      <div className=" mt-3 bg-gray-50">
+      <div className=" m-3 bg-gray-50">
         <h1 className="bg-gray-100 p-3">ĐÁNH GIÁ SẢN PHẨM: </h1>
         <div className="p-3 flex flex-col justify-center gap-3">
           {proDetail?.reviews?.map((item) => (

@@ -27,7 +27,7 @@ const ListProductHome = ({ isLoading }) => {
               <LoadingSkeleton />
             </div>
           ) : (
-            <ul className="flex flex-rown flex-wrap gap-3 justify-around ">
+            <ul className="flex flex-row flex-wrap gap-2 md:gap-3 justify-around ">
               {products && products.length
                 ? products.map((item) => (
                     <BoxProductHome item={item} key={item.id} />

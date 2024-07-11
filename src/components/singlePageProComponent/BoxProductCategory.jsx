@@ -5,12 +5,12 @@ const BoxProductCategory = ({ productCate }) => {
   return (
     <div>
       {" "}
-      <div className="mt-3">
+      <div className="m-3">
         <h1 className=" font-semibold py-3">CÓ THỂ BẠN CŨNG THÍCH</h1>
-        <ul className="flex flex-rown flex-wrap gap-3 justify-around ">
+        <ul className="flex flex-row flex-wrap gap-3 justify-around">
           {productCate.slice(0, 10).map((item) => (
             <Link to={`/product/${item.id}`} key={item.id}>
-              <li className=" bg-white w-[225px] cursor-pointer border relative  hover:scale-[1.02] ease-in duration-200 hover:border-red-600 rounded-2xl py-3">
+              <li className=" bg-white  w-[180px] md:w-[225px] cursor-pointer border relative  hover:scale-[1.02] ease-in duration-200 hover:border-red-600 rounded-2xl py-3">
                 <img
                   src={item.thumbnail}
                   alt={item.title}
@@ -24,7 +24,7 @@ const BoxProductCategory = ({ productCate }) => {
                     className="w-[50px]"
                   />
                 </span>
-                <div className="px-3 h-[120px]">
+                <div className="px-3 md:h-[120px] ">
                   <h2 className="font-bold flex gap-2 flex-row items-center">
                     {item.title.slice(0, 15)}
                     {"..."}

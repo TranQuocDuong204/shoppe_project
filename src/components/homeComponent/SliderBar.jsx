@@ -18,21 +18,21 @@ const SliderBar = () => {
     autoplaySpeed: 3000,
   };
   return (
-    <div className="max-w-[1200px] mx-auto my-5 rounded-md ">
+    <div className="md:max-w-[1200px] mx-auto my-5 rounded-md ">
       {/* <div className="max-w-[1200px] mx-auto flex gap-2"> */}
 
       <Slider {...settings}>
         <div className=" rounded-2xl">
-          <img src={banner1} alt="" className="w-full rounded-2xl" />
+          <img src={banner1} alt="" className="md:w-full rounded-2xl" />
         </div>
         <div className=" rounded-2xl">
-          <img src={banner2} alt="" className="w-full rounded-2xl" />
+          <img src={banner2} alt="" className="md:w-full rounded-2xl" />
         </div>
         <div className=" rounded-2xl">
-          <img src={banner3} alt="" className="w-full rounded-2xl" />
+          <img src={banner3} alt="" className="md:w-full rounded-2xl" />
         </div>
         <div className=" rounded-2xl">
-          <img src={banner4} alt="" className="w-full rounded-2xl" />
+          <img src={banner4} alt="" className="md:w-full rounded-2xl" />
         </div>
       </Slider>
     </div>

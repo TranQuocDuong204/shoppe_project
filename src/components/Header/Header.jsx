@@ -38,70 +38,137 @@ const Header = () => {
   };
   return (
     <>
-      <header className="bg-orange-500">
+      <header className="bg-orange-500 w-full px-2 sm:px-4">
         {/* contact */}
-        <div className="max-w-[1200px] mx-auto ">
-          <div className="flex justify-between">
-            <div className="contact-left">
-              <ul className="flex items-center  text-lg gap-5 text-white ">
-                <li className="py-4 cursor-pointer ">Kênh Người Bán</li>
-                <li className="py-4 cursor-pointer">Tải ứng dụng</li>
-                <li className="py-4 cursor-pointer flex gap-2  items-center">
+        <div className="md:max-w-[1200px] mx-auto">
+          <div className="flex justify-between items-center gap-2">
+            <div className="contact-left ">
+              <ul className="flex items-center text-sm sm:text-lg gap-3 sm:gap-5 text-white ">
+                <li className="py-2 sm:py-3 cursor-pointer hover:underline">
+                  Kênh Người Bán
+                </li>
+                <li className="py-2 sm:py-3 cursor-pointer hover:underline">
+                  Tải ứng dụng
+                </li>
+                <li className="py-2 sm:py-3cursor-pointer hover:underline flex items-center">
                   Kết nối
-                  <FacebookIcon />
-                  <InstagramIcon />
+                  <FacebookIcon
+                    sx={{
+                      fontSize: {
+                        lg: 25,
+                        md: 20,
+                        sm: 15,
+                        xs: 13,
+                      },
+                    }}
+                  />
                 </li>
               </ul>
             </div>
             <div className="contact-right">
-              <ul className="flex items-center text-lg gap-5 text-white ">
-                <li className="py-4 cursor-pointer">
-                  <CircleNotificationsIcon />
+              <ul className="flex items-center text-sm sm:text-lg  gap-5 text-white ">
+                <li className="py-2 sm:py-3 cursor-pointer hover:underline flex items-center">
+                  <CircleNotificationsIcon
+                    sx={{
+                      fontSize: {
+                        lg: 25,
+                        md: 20,
+                        sm: 15,
+                        xs: 13,
+                      },
+                    }}
+                  />
                   Thông báo
                 </li>
-                <li className="py-4 cursor-pointer">
-                  <HelpIcon />
+                <li className="py-2 sm:py-3 cursor-pointer hover:underline flex items-center">
+                  <HelpIcon
+                    sx={{
+                      fontSize: {
+                        lg: 25,
+                        md: 20,
+                        sm: 15,
+                        xs: 13,
+                      },
+                    }}
+                  />
                   Hỗ trợ
                 </li>
-                <li className="py-4 cursor-pointer">
+                <li className="py-2 sm:py-3 cursor-pointer hover:underline flex items-center">
                   {email ? (
                     <div
                       onMouseEnter={() => setShowHoverContent(true)}
                       onMouseLeave={() => setShowHoverContent(false)}
                     >
                       <div>
-                        <AccountCircleIcon />
+                        <AccountCircleIcon
+                          sx={{
+                            fontSize: {
+                              lg: 25,
+                              md: 20,
+                              sm: 15,
+                              xs: 13,
+                            },
+                          }}
+                        />
                         {email}
                       </div>
                       <div>
                         {showHoverContent && (
                           <>
-                            <div className="absolute top-[35px] right-[150px] z-10 mt-2 w-[115px] bg-white rounded-lg shadow-lg p-2 ">
+                            <div className="absolute top-[45px] md:top-[35px] md:right-[150px] z-50 mt-2 w-[115px] md:w-[125px] bg-white rounded-lg shadow-lg p-2">
                               <div className="flex items-center gap-2 rounded-md">
-                                <div className="flex flex-col ">
+                                <div className="flex flex-col">
                                   <Link to={"/profile"} className="flex">
-                                    <h2 className="flex items-center text-black px-4 hover:bg-slate-200 rounded-md">
-                                      <Person4Icon fontSize="sm" /> Profile
+                                    <h2 className="flex  items-center text-black px-4 hover:bg-slate-200 rounded-md">
+                                      <Person4Icon
+                                        sx={{
+                                          fontSize: {
+                                            lg: 25,
+                                            md: 20,
+                                            sm: 15,
+                                            xs: 13,
+                                          },
+                                        }}
+                                      />{" "}
+                                      Profile
                                     </h2>
                                   </Link>
                                   <h2
                                     onClick={handleClearLocal}
                                     className="flex items-center text-black px-4 hover:bg-slate-200 rounded-md"
                                   >
-                                    <LogoutIcon fontSize="sm" />
+                                    <LogoutIcon
+                                      sx={{
+                                        fontSize: {
+                                          lg: 25,
+                                          md: 20,
+                                          sm: 15,
+                                          xs: 13,
+                                        },
+                                      }}
+                                    />
                                     Logout
                                   </h2>
                                 </div>
                               </div>
                             </div>
-                            <span className="absolute top-[40px] right-[160px] w-4 h-4 bg-white transform rotate-45 "></span>
+                            <span className="absolute md:top-[40px] right-[30px] md:right-[160px] w-4 h-4 bg-white transform rotate-45"></span>
                           </>
                         )}
                       </div>
                     </div>
                   ) : (
                     <span onClick={handleClickOpenLogin}>
-                      <AccountCircleIcon />
+                      <AccountCircleIcon
+                        sx={{
+                          fontSize: {
+                            lg: 25,
+                            md: 20,
+                            sm: 15,
+                            xs: 13,
+                          },
+                        }}
+                      />
                       Login
                     </span>
                   )}

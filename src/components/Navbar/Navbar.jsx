@@ -30,10 +30,10 @@ const Navbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(search) {
+    if (search) {
       navigate(`search/${search}`);
       setSearch("");
-    }else {
+    } else {
       toast.error("Vui lòng nhập từ khóa để tìm kiểm nha...!!", {
         duration: 2000,
         position: "top-center",
@@ -42,7 +42,6 @@ const Navbar = () => {
         },
       });
     }
-   
   };
 
   const handleCartClick = (e) => {
@@ -68,27 +67,28 @@ const Navbar = () => {
       <div className="flex justify-between items-center gap-5">
         <div className="w-1/4">
           <Link to={"/"}>
-            <h1 className="text-4xl font-bold text-white flex items-center">
+            <h1 className=" text-2xl sm:text-4xl  font-bold text-white flex items-center">
               Soppe
             </h1>
           </Link>
         </div>
-        <div className="w-1/2 relative">
+        <div className="w-full md:w-1/2 relative flex items-center">
           <input
             type="text"
             placeholder="Tìm kiếm sản phẩm..."
-            className="w-full p-2 rounded outline-none"
+            className="w-full p-2 rounded outline-none flex-grow sm:w-3/4 md:w-full"
             onChange={getValueSearch}
             value={search}
           />
           <button
             onClick={handleSubmit}
             type="button"
-            className="focus:outline-none text-white bg-orange-500 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-1 absolute right-3 top-[6px]"
+            className="focus:outline-none text-white bg-orange-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-4 py-1 ml-2 md:ml-0 md:absolute md:right-3 md:top-1/2 md:transform md:-translate-y-1/2 md:bg-orange-500"
           >
             <SavedSearchIcon style={{ fontSize: "20px" }} />
           </button>
         </div>
+
         <div className="w-1/4 flex justify-center items-center relative">
           <div
             className="relative w-16 cursor-pointer"
@@ -96,8 +96,17 @@ const Navbar = () => {
             onMouseLeave={() => setShowHoverContent(false)}
           >
             <Link to={"/cart"} onClick={handleCartClick}>
-              <ShoppingCartIcon style={{ fontSize: "40px", color: "white" }} />
-              <span className="absolute w-8 h-4 bg-white flex justify-center items-center rounded-xl top-0 right-2 text-xs font-bold">
+              <ShoppingCartIcon
+                style={{ color: "white" }}
+                sx={{
+                  fontSize: {
+                    lg: 40,
+                    md: 35,
+                    sm: 30,
+                  },
+                }}
+              />
+              <span className="absolute w-8  h-4 bg-white flex justify-center items-center rounded-xl top-0 right-4 sm:right-2 text-xs font-bold">
                 {carts.length}
               </span>
             </Link>
@@ -106,7 +115,7 @@ const Navbar = () => {
                 {" "}
                 {showHoverContent && (
                   <>
-                    <div className="absolute top-[35px] right-[-50px] z-10 mt-2 w-[400px] bg-white rounded-lg shadow-lg p-4 ">
+                    <div className="absolute md:top-[35px] right-0 md:right-[-50px] z-10 mt-2 w-[200px] md:w-[400px] bg-white rounded-lg shadow-lg p-4 ">
                       {carts && carts.length > 0 ? (
                         carts.slice(0, 5).map((item) => (
                           <Link to={`/product/${item.id}`} key={item.id}>
@@ -150,7 +159,7 @@ const Navbar = () => {
                         </Link>
                       </div>
                     </div>
-                    <span className="absolute top-[40px] right-2 w-4 h-4 bg-white transform rotate-45 "></span>
+                    <span className="absolute top-[35px] md:top-[40px] right-2 w-4 h-4 bg-white transform rotate-45 "></span>
                   </>
                 )}
               </div>
@@ -158,7 +167,7 @@ const Navbar = () => {
               <div>
                 {showHoverContent && (
                   <>
-                    <div className=" flex justify-center absolute top-[35px] right-[-50px] z-10 mt-2 w-[400px] bg-white rounded-lg shadow-lg p-4 ">
+                    <div className=" flex justify-center absolute md:top-[35px] right-0 md:right-[-50px] z-10 mt-2 w-[200px] md:w-[400px] bg-white rounded-lg shadow-lg p-4 ">
                       <img
                         src="https://img.freepik.com/free-vector/red-supermarket-basket-isolated_1284-35982.jpg?w=740&t=st=1719996355~exp=1719996955~hmac=e34fca7fd2816694cb68acf10e6050fa7ba557725aa2278d1224e380c6b16479"
                         alt=""
@@ -166,7 +175,7 @@ const Navbar = () => {
                      "
                       />
                     </div>
-                    <span className="absolute top-[40px] right-2 w-4 h-4 bg-white transform rotate-45 "></span>
+                    <span className="absolute top-[35px] md:top-[40px] right-2 w-4 h-4 bg-white transform rotate-45 "></span>
                   </>
                 )}
               </div>
@@ -176,11 +185,11 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center pb-3 w-full place-content-around">
-        <ul className="flex gap-3 w-1/2 pl-3">
+        <ul className="flex flex-row md:flex-row md:gap-5 gap-2 w-1/2 pl-3  flex-wrap left-0">
           {listCate.slice(0, 5).map((item) => (
             <li
               key={item.id}
-              className="cursor-pointer hover:underline text-white"
+              className="cursor-pointer hover:underline text-white text-xs md:text-sm "
             >
               <Link to={`category/${item.slug}`}>
                 {item.name.replace("-", "")}

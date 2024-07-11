@@ -6,7 +6,6 @@ import HomePage from "../pages/HomePage/HomePage";
 import CartPage from "../pages/CartPage/CartPage";
 import CategoriProductPage from "../pages/CategoriProductPage/CategoriProductPage";
 import CheckOutPage from "../pages/CheckOutPage/CheckOutPage";
-
 import ProductSinglePage from "../pages/ProductSinglePage/ProductSinglePage";
 import SearchPage from "../pages/SearchPage/SearchPage";
 import ProFilePage from "../pages/ProfilePage/ProFilePage";

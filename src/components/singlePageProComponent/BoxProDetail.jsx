@@ -58,9 +58,9 @@ const BoxProDetail = ({ imgMain, proDetail, getImg }) => {
   return (
     <div>
       {messageSuccess && <CartMessage />}
-      <div className="flex flex-row border-2 p-3 rounded-md">
+      <div className="flex flex-row border-2 p-3 m-3 rounded-md">
         <div className="w-1/2 flex flex-col justify-center">
-          <div className="p-2">
+          <div className="p-3 md:p-2 md:w-[500px]">
             <img src={imgMain} alt="" className="w-full" />
           </div>
 
@@ -79,13 +79,15 @@ const BoxProDetail = ({ imgMain, proDetail, getImg }) => {
             ))}
           </div>
         </div>
-        <div className="w-full p-2">
+        <div className="w-1/2 p-2">
           <div className="flex flex-col">
-            <h1 className="text-2xl">{proDetail.title}</h1>
+            <h1 className="text-2xl font-semibold">{proDetail.title}</h1>
 
-            <div className="flex flex-row gap-2 py-2">
-              <div className="flex flex-row items-center px-2">
-                <h2 className="underline">{proDetail.rating}</h2>
+            <div className="flex flex-row gap-2 py-2  pr-4">
+              <div className="flex flex-wrap items-center">
+                <h2 className="underline text-sm md:text-base">
+                  {proDetail.rating}
+                </h2>
                 <p>
                   <Rating
                     name="half-rating-read"
@@ -96,12 +98,18 @@ const BoxProDetail = ({ imgMain, proDetail, getImg }) => {
                   />
                 </p>
               </div>
-              |<h2 className="px-2">{proDetail.stock} Đánh giá</h2> |
-              <h2>{proDetail.minimumOrderQuantity} Đã bán</h2>
+              |
+              <h2 className="px-2 text-xs md:text-base">
+                {proDetail.stock} Đánh giá
+              </h2>{" "}
+              |
+              <h2 className="text-xs md:text-base">
+                {proDetail.minimumOrderQuantity} Đã bán
+              </h2>
             </div>
 
             <div className="flex flex-row gap-3 p-3 items-center bg-gray-100 my-2">
-              <h3 className="text-4xl text-red-500">
+              <h3 className="text-xl md:text-4xl text-red-500 ">
                 {Math.ceil(proDetail.price)}$
               </h3>
               <span className="p-1 bg-red-400 text-xs font-bold text-white">

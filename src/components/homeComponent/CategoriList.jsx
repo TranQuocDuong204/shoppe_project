@@ -50,14 +50,14 @@ const CategoriList = () => {
 
   return (
     <div className="max-w-[1200px] mx-auto">
-      <div className="flex gap-2 flex-col">
+      <div className="flex gap-2 flex-col ">
         <div className="py-5  uppercase  bg-white font-bold px-3 rounded-md ">
           Danh mục
         </div>
 
         <Slider {...settings}>
-          <div className="flex ">
-            <div className="flex flex-row flex-wrap justify-around gap-0 ">
+          <div className="flex mx-4 sm:mx-3 ">
+            <div className="flex flex-row flex-wrap justify-around gap-1 ">
               {listCate.slice(0, 10).map((item) => (
                 <div
                   key={item.id}
@@ -76,7 +76,7 @@ const CategoriList = () => {
           </div>
 
           <div className="flex ">
-            <div className="flex flex-row flex-wrap justify-around gap-0">
+            <div className="flex flex-row flex-wrap justify-around gap-1 ">
               {listCate.slice(10, 20).map((item) => (
                 <div
                   onClick={() => handleDetail(item)}

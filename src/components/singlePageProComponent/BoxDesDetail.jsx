@@ -3,7 +3,7 @@ import React from "react";
 const BoxDesDetail = ({ proDetail }) => {
   return (
     <div>
-      <div className=" mt-3">
+      <div className=" m-3">
         <h1 className="bg-gray-100 p-3">MÔ TẢ SẢN PHẨM: </h1>
         <div className="p-3 border-2">
           <h1>{proDetail.description}</h1>

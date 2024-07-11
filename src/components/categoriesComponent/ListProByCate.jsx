@@ -1,14 +1,13 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Rating from "@mui/material/Rating";
-import LoadingProduct from "../loading/LoadingProduct";
 import LoadingBackdrop from "../loading/LoadingBackdrop";
 const ListProByCate = ({ listCategories, isLoading }) => {
   const { id } = useParams();
   return (
     <div>
       {isLoading ? (
-        <div className="max-w-[1200px] flex justify-center items-center">
+        <div className="max-w-[1200px] flex flex-wrap justify-center items-center">
           <LoadingBackdrop isLoading={isLoading} />
         </div>
       ) : (
@@ -19,7 +18,7 @@ const ListProByCate = ({ listCategories, isLoading }) => {
               <Link to={`/product/${pro.id}`}>
                 <li
                   key={pro.id}
-                  className=" bg-white w-[220px] cursor-pointer border relative hover:scale-[1.02] ease-in duration-200 hover:border-red-600 rounded-2xl py-3"
+                  className=" bg-white w-[140px] md:w-[220px] cursor-pointer border relative hover:scale-[1.02] ease-in duration-200 hover:border-red-600 rounded-2xl py-3"
                 >
                   <img
                     src={pro.thumbnail}
@@ -33,10 +32,10 @@ const ListProByCate = ({ listCategories, isLoading }) => {
                       className="w-[50px]"
                     />
                   </span>
-                  <div className="px-3 h-[140px] flex flex-col justify-center">
-                    <h2 className="font-bold flex gap-2 flex-row items-center">
+                  <div className="px-3 h-full md:h-[120px] flex flex-col justify-center">
+                    <h2 className="font-bold flex gap-2 flex-row items-center flex-wrap">
                       {pro.title}
-                      <span className=" bg-slate-100 font-normal p-1 rounded-md">
+                      <span className=" bg-slate-100 text-xs md:text-sm md:font-normal p-1 rounded-md">
                         {pro.category}
                       </span>
                     </h2>
@@ -52,7 +51,9 @@ const ListProByCate = ({ listCategories, isLoading }) => {
                           readOnly
                         />
                       </p>
-                      <p>Đã bán: {pro.stock}k</p>
+                      <p className=" text-xs md:text-base px-1">
+                        Đã bán: {pro.stock}k
+                      </p>
                     </div>
                   </div>
                 </li>

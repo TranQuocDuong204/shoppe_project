@@ -40,15 +40,15 @@ const ShopMallHome = ({ isLoading }) => {
         <div className="py-5 border-solid  rounded-md bg-white">
           <ul className="flex gap-5 px-3 items-center justify-start">
             <li className="text-red-500">SHOPE MALL |</li>
-            <li>
+            <li className="text-sm md:text-base">
               <ReplyIcon style={{ color: "red" }} />
               Trả Hàng Miễn Phí 15 Ngày
             </li>
-            <li>
+            <li className="text-sm md:text-base">
               <GppGoodIcon style={{ color: "red" }} />
               Hàng Chính Hãng 100%
             </li>
-            <li>
+            <li className="text-sm md:text-base">
               <LocalShippingIcon style={{ color: "red" }} />
               Miễn Phí Vận Chuyển
             </li>
@@ -73,22 +73,20 @@ const ShopMallHome = ({ isLoading }) => {
           </div>
           <div className="flex-grow rounded-md ">
             {isLoading ? (
-              
-                <LoadingProduct/>
-              
+              <LoadingProduct />
             ) : (
-              <ul className="flex flex-wrap gap-2 cursor-pointer">
+              <ul className="flex flex-wrap gap-2 cursor-pointer justify-center">
                 {listMall && listMall.length
                   ? listMall.slice(0, 8).map((item) => (
                       <Link key={item.id} to={`/product/${item.id}`}>
                         <li
                           key={item.id}
-                          className=" rounded-xl bg-slate-200 border h-[232px] hover:scale-[1.02] ease-in duration-200 "
+                          className=" rounded-xl bg-slate-200 border w-[100px] md:w-[180px] h-[150px] md:h-[232px] hover:scale-[1.02] ease-in duration-200 p-1 md:p-0"
                         >
                           <img
                             src={item.thumbnail}
                             alt={item.title}
-                            className="w-[180px] rounded-md"
+                            className="w-[80px] md:w-[180px] rounded-md"
                           />
                           <h2 className="text-center">{item.category} -50%</h2>
                         </li>

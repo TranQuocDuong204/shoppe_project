@@ -28,13 +28,13 @@ const FlashSaleHome = ({ isLoading }) => {
   }, []);
 
   return (
-    <div className="max-w-[1200px] mx-auto">
+    <div className="md:max-w-[1200px] mx-auto">
       <div className="flex flex-col mt-5">
         <div className="flex gap-3 p-3 items-center bg-white rounded-md py-4">
           <img
             src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/flashsale/fb1088de81e42c4e5389.png"
             alt=""
-            className="h-[32px]"
+            className="h-[20px] md:h-[32px]"
           />
           <Countdown date={Date.now() + 10000000} renderer={renderer} />
         </div>
@@ -43,12 +43,12 @@ const FlashSaleHome = ({ isLoading }) => {
             <LoadingProduct />
           </div>
         ) : (
-          <div className=" flex flex-wrap mt-2">
+          <div className=" flex flex-wrap mt-2 justify-center">
             {listFlash.slice(0, 6).map((item) => (
               <Link key={item.id} to={`/product/${item.id}`}>
                 <div
                   key={item.id}
-                  className="w-[200px] h-[248px] bg-white cursor-pointer p-3 relative gap-1 border hover:scale-[1.02] ease-in duration-200"
+                   className="w-[150px] md:w-[200px] h-[200px] md:h-[248px] bg-white cursor-pointer p-3 relative gap-1 border hover:scale-[1.02] ease-in duration-200"
                 >
                   <img src={item.thumbnail} alt="" className="p-3 w-full" />
                   <span className=" absolute w-[37px] h-[22px] bg-red-200  text-red-700 flex justify-center items-center rounded top-1 left-1">
